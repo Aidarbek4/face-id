@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Face Recognition Login</title>
+  <link href="https://fonts.googleapis.com/css?family=Kanit:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/login.css">
+</head>
+
+<body>
+  <main class="login">
+    <div class="login__logo logo">
+      <div class="logo__img-wrapper">
+        <img src="../images/logo.png" alt="logo" class="logo__img">
+      </div>
+      <h1 class="logo__title">NeuralFace</h1>
+    </div>
+    <form id="loginForm" class="login__form" method="post" action="/" enctype="multipart/form-data">
+      <h1 class="login__title">Login</h1>
+      <input type="email" name="email" class="login__input" placeholder="Email" required>
+      <input type="password" name="password" class="login__input" placeholder="Password" required>
+      <div id="photoNotification" class="login__notification">Photo has been added</div>
+      <button type="button" id="addPhotoButton" class="login__button photo">Add Photo</button>
+      <input type="hidden" name="photo" id="photoInput">
+      <button type="submit" class="login__button">Login</button>
+      <span class="login__redirect">
+        Don’t have an account? <a href="./register.html" class="login__redirect-link">Register</a>
+      </span>
+    </form>
+  </main>
+
+  <div id="overlay" class="overlay"></div>
+
+  <div class="modal" id="cameraModal">
+    <div class="modal-content">
+      <button class="close-modal" id="closeModal">&times;</button>
+      <video id="video" autoplay></video>
+      <button id="captureButton" class="modal__button">Capture Photo</button>
+    </div>
+  </div>
+
+  <script src="../js/login.js"></script>
+</body>
+
+</html>
