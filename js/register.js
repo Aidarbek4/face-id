@@ -41,6 +41,7 @@ captureButton.addEventListener('click', () => {
   photoNotification.style.display = 'block';
 
   cameraModal.classList.remove('active');
+  overlay.classList.remove('active');
   if (stream) {
     stream.getTracks().forEach((track) => track.stop());
   }
